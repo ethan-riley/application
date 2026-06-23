@@ -1,0 +1,30 @@
+wing: ai_proxy
+rooms:
+- name: testing
+  description: Files from tests/
+  keywords:
+  - testing
+  - tests
+- name: k8s
+  description: Files from k8s/
+  keywords:
+  - k8s
+  - k8s
+- name: app
+  description: Files from app/
+  keywords:
+  - app
+  - app
+- name: data
+  description: Files from data/
+  keywords:
+  - data
+  - data
+- name: documentation
+  description: Files from docs/
+  keywords:
+  - documentation
+  - docs
+- name: general
+  description: Files that don't fit other rooms
+  keywords: []

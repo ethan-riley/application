@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: llm-gate
+  namespace: llm-gate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: llm-gate
+  template:
+    metadata:
+      labels:
+        app: llm-gate
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: tsl01.tech-sphere.pro
+      containers:
+        - name: api
+          image: llm-control-plane:llm-gate-v1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
+              name: http
+          envFrom:
+            - secretRef:
+                name: llm-gate-secrets
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: llm-gate
+  namespace: llm-gate
+spec:
+  selector:
+    app: llm-gate
+  ports:
+    - name: http
+      port: 8000
+      targetPort: http
+  type: ClusterIP

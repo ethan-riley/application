@@ -1,0 +1,348 @@
+{
+  "api_clients": [],
+  "models": [
+    {
+      "avg_latency_ms": 850,
+      "cost_per_1k_input_tokens": 0.00015,
+      "cost_per_1k_output_tokens": 0.0006,
+      "enabled": true,
+      "error_rate": 0.008,
+      "mode": "balanced",
+      "model": "gpt-4o-mini",
+      "provider": "openai",
+      "quality_score": 0.81,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "tags": [
+        "default",
+        "fast",
+        "live"
+      ]
+    },
+    {
+      "avg_latency_ms": 1600,
+      "cost_per_1k_input_tokens": 0.002,
+      "cost_per_1k_output_tokens": 0.008,
+      "enabled": true,
+      "error_rate": 0.006,
+      "mode": "premium",
+      "model": "gpt-4.1",
+      "provider": "openai",
+      "quality_score": 0.93,
+      "supports_streaming": true,
+      "supports_tools": true,
+      "tags": [
+        "quality",
+        "live"
+      ]
+    },
+    {
+      "avg_latency_ms": 950,
+      "cost_per_1k_input_tokens": 0.0,
+      "cost_per_1k_output_tokens": 0.0,
+      "enabled": true,
+      "error_rate": 0.02,
+      "mode": "economy",
+      "model": "qwen3.5:4b",
+      "provider": "ollama",
+      "quality_score": 0.73,
+      "supports_streaming": false,
+      "supports_tools": false,
+      "tags": [
+        "ollama",
+        "local",
+        "live"
+      ]
+    },
+    {
+      "avg_latency_ms": 1300,
+      "cost_per_1k_input_tokens": 0.0,
+      "cost_per_1k_output_tokens": 0.0,
+      "enabled": true,
+      "error_rate": 0.02,
+      "mode": "balanced",
+      "model": "qwen3.5:latest",
+      "provider": "ollama",
+      "quality_score": 0.82,
+      "supports_streaming": false,
+      "supports_tools": false,
+      "tags": [
+        "ollama",
+        "local",
+        "live"
+      ]
+    },
+    {
+      "avg_latency_ms": 700,
+      "cost_per_1k_input_tokens": 0.0,
+      "cost_per_1k_output_tokens": 0.0,
+      "enabled": true,
+      "error_rate": 0.03,
+      "mode": "economy",
+      "model": "deepseek-r1:1.5b",
+      "provider": "ollama",
+      "quality_score": 0.68,
+      "supports_streaming": false,
+      "supports_tools": false,
+      "tags": [
+        "ollama",
+        "local",
+        "reasoning",
+        "live"
+      ]
+    },
+    {
+      "avg_latency_ms": 1800,
+      "cost_per_1k_input_tokens": 0.0,
+      "cost_per_1k_output_tokens": 0.0,
+      "enabled": true,
+      "error_rate": 0.025,
+      "mode": "premium",
+      "model": "deepseek-r1:8b",
+      "provider": "ollama",
+      "quality_score": 0.88,
+      "supports_streaming": false,
+      "supports_tools": false,
+      "tags": [
+        "ollama",
+        "local",
+        "reasoning",
+        "live"
+      ]
+    },
+    {
+      "avg_latency_ms": 1000,
+      "cost_per_1k_input_tokens": 0.0,
+      "cost_per_1k_output_tokens": 0.0,
+      "enabled": true,
+      "error_rate": 0.02,
+      "mode": "balanced",
+      "model": "gemma3:latest",
+      "provider": "ollama",
+      "quality_score": 0.76,
+      "supports_streaming": false,
+      "supports_tools": false,
+      "tags": [
+        "ollama",
+        "local",
+        "live"
+      ]
+    },
+    {
+      "avg_latency_ms": 450,
+      "cost_per_1k_input_tokens": 0.0,
+      "cost_per_1k_output_tokens": 0.0,
+      "enabled": true,
+      "error_rate": 0.03,
+      "mode": "economy",
+      "model": "qwen3:0.6b",
+      "provider": "ollama",
+      "quality_score": 0.55,
+      "supports_streaming": false,
+      "supports_tools": false,
+      "tags": [
+        "ollama",
+        "local",
+        "live"
+      ]
+    },
+    {
+      "avg_latency_ms": 1400,
+      "cost_per_1k_input_tokens": 0.0,
+      "cost_per_1k_output_tokens": 0.0,
+      "enabled": true,
+      "error_rate": 0.025,
+      "mode": "premium",
+      "model": "qwen3:8b",
+      "provider": "ollama",
+      "quality_score": 0.84,
+      "supports_streaming": false,
+      "supports_tools": false,
+      "tags": [
+        "ollama",
+        "local",
+        "live"
+      ]
+    },
+    {
+      "avg_latency_ms": 1100,
+      "cost_per_1k_input_tokens": 0.0008,
+      "cost_per_1k_output_tokens": 0.004,
+      "enabled": true,
+      "error_rate": 0.009,
+      "mode": "balanced",
+      "model": "claude-3-5-haiku",
+      "provider": "anthropic",
+      "quality_score": 0.86,
+      "supports_streaming": true,
+      "supports_tools": false,
+      "tags": [
+        "fallback",
+        "not-live"
+      ]
+    },
+    {
+      "avg_latency_ms": 700,
+      "cost_per_1k_input_tokens": 0.0002,
+      "cost_per_1k_output_tokens": 0.0006,
+      "enabled": true,
+      "error_rate": 0.012,
+      "mode": "economy",
+      "model": "mistral-small",
+      "provider": "mistral",
+      "quality_score": 0.72,
+      "supports_streaming": true,
+      "supports_tools": false,
+      "tags": [
+        "cheap",
+        "not-live"
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "policy_id": "org-default",
+      "rules": {
+        "allowed_models": [],
+        "blocked_terms": [
+          "credit card",
+          "social security"
+        ],
+        "fallback_model": "gpt-4o-mini",
+        "max_cost_per_request": 0.03
+      },
+      "scope": "org",
+      "scope_id": "techsphere"
+    },
+    {
+      "policy_id": "team-platform",
+      "rules": {
+        "allowed_models": [
+          "gpt-4o-mini",
+          "gpt-4.1",
+          "qwen3.5:4b",
+          "qwen3.5:latest",
+          "deepseek-r1:1.5b",
+          "deepseek-r1:8b",
+          "gemma3:latest",
+          "qwen3:0.6b",
+          "qwen3:8b"
+        ],
+        "blocked_terms": [
+          "pii"
+        ],
+        "fallback_model": "qwen3.5:latest",
+        "max_cost_per_request": 0.015
+      },
+      "scope": "team",
+      "scope_id": "platform"
+    }
+  ],
+  "providers": [
+    {
+      "api_key": null,
+      "base_url": "https://api.anthropic.com/v1",
+      "enabled": true,
+      "labels": {
+        "kind": "saas"
+      },
+      "organization": null,
+      "project": null,
+      "provider_id": "anthropic",
+      "provider_type": "anthropic",
+      "timeout_seconds": 30.0
+    },
+    {
+      "api_key": null,
+      "base_url": null,
+      "enabled": true,
+      "labels": {
+        "api_version": "2024-02-01",
+        "kind": "saas"
+      },
+      "organization": null,
+      "project": null,
+      "provider_id": "azure-openai",
+      "provider_type": "azure_openai",
+      "timeout_seconds": 30.0
+    },
+    {
+      "api_key": null,
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+      "enabled": true,
+      "labels": {
+        "kind": "saas"
+      },
+      "organization": null,
+      "project": null,
+      "provider_id": "gemini",
+      "provider_type": "gemini",
+      "timeout_seconds": 30.0
+    },
+    {
+      "api_key": null,
+      "base_url": "https://api.groq.com/openai/v1",
+      "enabled": true,
+      "labels": {
+        "kind": "saas"
+      },
+      "organization": null,
+      "project": null,
+      "provider_id": "groq",
+      "provider_type": "groq",
+      "timeout_seconds": 30.0
+    },
+    {
+      "api_key": null,
+      "base_url": "https://api.moonshot.ai/v1",
+      "enabled": false,
+      "labels": {
+        "kind": "saas"
+      },
+      "organization": null,
+      "project": null,
+      "provider_id": "kimi",
+      "provider_type": "kimi",
+      "timeout_seconds": 30.0
+    },
+    {
+      "api_key": null,
+      "base_url": "https://api.mistral.ai/v1",
+      "enabled": true,
+      "labels": {
+        "kind": "saas"
+      },
+      "organization": null,
+      "project": null,
+      "provider_id": "mistral",
+      "provider_type": "mistral",
+      "timeout_seconds": 30.0
+    },
+    {
+      "api_key": null,
+      "base_url": "http://ollama-external.default.svc.cluster.local:11434",
+      "enabled": true,
+      "labels": {
+        "kind": "local"
+      },
+      "organization": null,
+      "project": null,
+      "provider_id": "ollama",
+      "provider_type": "ollama",
+      "timeout_seconds": 60.0
+    },
+    {
+      "api_key": null,
+      "base_url": "https://api.openai.com/v1",
+      "enabled": true,
+      "labels": {
+        "kind": "saas"
+      },
+      "organization": null,
+      "project": null,
+      "provider_id": "openai",
+      "provider_type": "openai",
+      "timeout_seconds": 30.0
+    }
+  ]
+}

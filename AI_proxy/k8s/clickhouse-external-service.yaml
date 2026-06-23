@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: clickhouse-external
+  namespace: default
+spec:
+  ports:
+    - name: http
+      port: 8123
+      targetPort: 8123
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: clickhouse-external
+  namespace: default
+subsets:
+  - addresses:
+      - ip: 192.168.1.138
+    ports:
+      - name: http
+        port: 8123
+        protocol: TCP

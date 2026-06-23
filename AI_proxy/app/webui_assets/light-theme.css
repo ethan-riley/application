@@ -1,0 +1,139 @@
+/* LLM Gate — Light theme override.
+   Loaded AFTER styles.css to invert dark tokens.
+   Color structure unchanged — only surface + text tokens shift.
+*/
+:root {
+  --bg-0: #f6f8fb;
+  --bg-1: #ffffff;
+  --bg-2: #f9fafb;
+  --bg-3: #f3f4f6;
+  --bg-4: #e5e7eb;
+
+  --border:   #e5e7eb;
+  --border-2: #d1d5db;
+  --border-3: #9ca3af;
+
+  --text-1: #0f172a;
+  --text-2: #334155;
+  --text-3: #64748b;
+  --text-4: #94a3b8;
+
+  /* Keep portal brand teal as accent so light theme feels native. */
+  --accent:      #1a9bba;
+  --accent-dim:  rgba(26, 155, 186, 0.12);
+  --accent-line: rgba(26, 155, 186, 0.35);
+
+  /* Status colors — unchanged hues, softer tints for light bg */
+  --green:     #059669;
+  --green-dim: rgba(5, 150, 105, 0.10);
+  --amber:     #d97706;
+  --amber-dim: rgba(217, 119, 6, 0.10);
+  --red:       #dc2626;
+  --red-dim:   rgba(220, 38, 38, 0.08);
+  --blue:      #2563eb;
+  --blue-dim:  rgba(37, 99, 235, 0.08);
+  --purple:    #9333ea;
+  --purple-dim:rgba(147, 51, 234, 0.08);
+}
+
+html, body { background: var(--bg-0); color: var(--text-1); }
+
+/* Default icon size — original design relied on intrinsic 14px from component defaults */
+svg.icon { width: 14px; height: 14px; flex-shrink: 0; stroke-width: 1.5; }
+.btn svg.icon { width: 13px; height: 13px; }
+.theme-btn svg.icon { width: 13px; height: 13px; }
+
+/* Tame topbar search: constrained width, icon + input sized sanely */
+.topbar-search { flex: 0 1 320px; max-width: 420px; min-width: 180px; }
+.topbar-search svg.icon { width: 14px; height: 14px; color: var(--text-3); }
+.topbar-search .search-input { flex: 1 1 auto; min-width: 0; }
+
+/* Fix brand-mark contrast — inner notch used --bg-0 for dark, needs white for light */
+.brand-mark::after { border-color: #ffffff transparent transparent #ffffff; }
+
+/* Borders on cards / elevations more visible on light */
+.topbar, .navbar, .sidebar { background: var(--bg-1); }
+.chart-card, .panel, .tbl-wrap, .kpi, .hero { background: var(--bg-1); }
+.tbl thead th { background: var(--bg-2); border-bottom-color: var(--border); }
+.tbl tr:hover { background: var(--bg-2); }
+.tbl tr.selected { background: var(--accent-dim); }
+
+/* Buttons: primary stays teal; secondary soft on white */
+.btn { background: var(--bg-1); border: 1px solid var(--border); color: var(--text-1); }
+.btn:hover { background: var(--bg-2); border-color: var(--border-2); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: #ffffff; }
+.btn-primary:hover { background: #158da8; border-color: #158da8; }
+.btn-ghost { background: transparent; border-color: transparent; color: var(--text-2); }
+.btn-ghost:hover { background: var(--bg-2); color: var(--text-1); }
+
+/* Input surfaces */
+.input, .topbar-search, .theme-switch {
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  color: var(--text-1);
+}
+.input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+
+/* Pills */
+.pill-neutral { background: var(--bg-3); color: var(--text-2); border: 1px solid var(--border); }
+.pill-green  { background: var(--green-dim);  color: var(--green);  }
+.pill-amber  { background: var(--amber-dim);  color: var(--amber);  }
+.pill-red    { background: var(--red-dim);    color: var(--red);    }
+.pill-blue   { background: var(--blue-dim);   color: var(--blue);   }
+
+/* Avatar legible on light */
+.avatar { color: #ffffff; }
+
+/* Segmented */
+.segmented { background: var(--bg-2); border: 1px solid var(--border); }
+.segmented button { color: var(--text-2); }
+.segmented button.on { background: var(--bg-1); color: var(--text-1); box-shadow: 0 1px 2px rgba(15,23,42,0.06); }
+
+/* Toggle */
+.toggle { background: var(--bg-3); border: 1px solid var(--border); }
+.toggle::after { background: #ffffff; box-shadow: 0 1px 2px rgba(15,23,42,0.15); }
+.toggle.on { background: var(--accent); border-color: var(--accent); }
+
+/* Drawer + modal backgrounds */
+.drawer { background: var(--bg-1); border-left: 1px solid var(--border); }
+.drawer-backdrop, .modal-backdrop { background: rgba(15, 23, 42, 0.35); }
+.modal { background: var(--bg-1); border: 1px solid var(--border); color: var(--text-1); }
+.modal-head h2 { color: var(--text-1); }
+
+/* Tweaks panel */
+.tweaks-panel { background: var(--bg-1); border-left: 1px solid var(--border); color: var(--text-1); }
+
+/* Table numeric + cost colors tuned for light */
+.col-num-strong { color: var(--text-1); }
+
+/* Scrollbar */
+::-webkit-scrollbar-thumb { background: var(--border-2); }
+::-webkit-scrollbar-thumb:hover { background: var(--border-3); }
+
+/* Live dot / status dots stay saturated */
+.live-dot, .env-dot { box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.12); }
+
+/* KPI delta colors */
+.kpi-delta { color: var(--green); }
+.kpi-delta.down { color: var(--red); }
+.kpi-delta.neutral { color: var(--text-3); }
+
+/* Activity feed */
+.activity-row { border-bottom: 1px solid var(--border); }
+.activity-row:hover { background: var(--bg-2); }
+
+/* Policy rows */
+.policy { border-bottom: 1px solid var(--border); }
+.policy:hover { background: var(--bg-2); }
+.policy code { background: var(--bg-3); color: var(--text-1); padding: 1px 5px; border-radius: 3px; font-family: var(--mono); font-size: 11px; }
+
+/* Drawer tabs */
+.drawer-tab { color: var(--text-3); border-bottom: 2px solid transparent; }
+.drawer-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* Sidebar active indicator uses accent */
+.nav-item.active { background: var(--accent-dim); color: var(--accent); }
+.nav-item.active::before { background: var(--accent); }
+
+/* Selection color */
+::selection { background: var(--accent-dim); color: var(--text-1); }
